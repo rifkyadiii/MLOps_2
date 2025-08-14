@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'huggingface-app'
+    
+    # 1. Tentukan path tempat metrik berada secara terpisah
+    metrics_path: /metrics
+
+    # 2. Tentukan skema (protokol) secara terpisah
+    scheme: https
+
+    static_configs:
+      # 3. 'targets' SEKARANG HANYA berisi nama host (domain) saja
+      - targets: ['rifkyadiii-mobile-price-prediction.hf.space']

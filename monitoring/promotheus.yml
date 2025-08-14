@@ -1,7 +1,0 @@
-global:
-  scrape_interval: 15s
-
-scrape_configs:
-  - job_name: 'fastapi-app'
-    static_configs:
-      - targets: ['YOUR_APP_URL_WILL_GO_HERE'] # Ganti nanti dengan URL publik Anda
