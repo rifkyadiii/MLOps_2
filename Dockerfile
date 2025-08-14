@@ -1,17 +1,18 @@
-# Gunakan base image Python
+# Gunakan Python resmi
 FROM python:3.10-slim
 
-# Set direktori kerja di dalam container
+# Set working directory
 WORKDIR /app
 
-# Salin semua file proyek ke dalam container
-COPY . .
-
-# Install dependencies
+# Copy requirements dan install
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Port yang akan diekspos oleh container
-EXPOSE 7860
+# Copy semua file proyek
+COPY . .
 
-# Perintah untuk menjalankan aplikasi saat container dimulai
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Expose port
+EXPOSE 8080
+
+# Jalankan API dengan Uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
