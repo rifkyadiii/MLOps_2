@@ -1,0 +1,8 @@
+fastapi==0.116.1
+keras_tuner==1.4.7
+ml_pipelines_sdk==1.15.0
+prometheus_fastapi_instrumentator==7.1.0
+tensorflow==2.15.1
+tensorflow_transform==1.15.0
+tfx==1.15.0
+uvicorn==0.35.0
