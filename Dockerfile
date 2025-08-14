@@ -1,15 +1,11 @@
-# Gunakan Python base image
+# Gunakan base image Python
 FROM python:3.10-slim
 
-# Set working directory
+# Set direktori kerja di dalam container
 WORKDIR /app
 
-# Copy file requirements dan install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy semua file project
+# Salin semua file proyek ke dalam container
 COPY . .
 
-# Jalankan API dengan uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
